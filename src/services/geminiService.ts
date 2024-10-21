@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "AIzaSyDCO3usa2dJc42Mt6eEuaCmhM-5NmRqKI0";
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 export async function generateTravelPlan(prompt: string) {
@@ -15,4 +15,4 @@ export async function generateTravelPlan(prompt: string) {
     console.error("Gemini API çağrısı sırasında hata oluştu:", error);
     throw new Error("Seyahat planı oluşturulurken bir hata meydana geldi. Lütfen daha sonra tekrar deneyin.");
   }
-}  
+}
